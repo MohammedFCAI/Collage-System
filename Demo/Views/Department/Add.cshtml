@@ -1,0 +1,38 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add</h1>
+
+<a href="/Department/Index">Back to list</a> || 
+@Html.ActionLink("Back To List", "Index") ||
+
+<a asp-action="Index" asp-controller="Department">Back To List</a>
+<br />
+<a asp-action="Details" asp-controller="" asp-route-id="1">Go To Details</a>
+
+
+@* <form action="/Department/SaveAdd" method="post" class="form-inline"> *@
+<form asp-action="SaveAdd" asp-controller="Department" method="post">
+
+    <div >
+        <div class="form-group">
+            @* @Html.LabelFor(d => d.Name, new{@class= "sr-only"})
+            @Html.TextBoxFor(d => d.Name, new { style = "color:red", placeholder = "Enter your name", @class = "form-control" }) *@
+            
+            <!--Tag Helper-->
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name"/>
+
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(d => d.ManagerName)
+            @Html.TextBoxFor(d => d.ManagerName, new { style = "color:red", placeholder = "Enter manager name", @class = "form-control" })
+        </div>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,30 @@
+﻿@using Demo.ViewModels
+@model DepartmentViewModel
+@{
+    ViewData["Title"] = "TestViewModel";
+}
+
+<h1>TestViewData</h1>
+
+<h2 style="background-color:@Model.Color">@Model.DepartmentName</h2>
+
+
+<!--ViewData-->
+
+<h3>Message: @Model.Message</h3>
+
+
+<select class="form-control">
+    @foreach (var item in Model.Branches)
+    {
+        <option>@item</option>
+    }
+</select>
+
+
+
+<h4>@(Model.Temp + 10)</h4>
+
+
+
+

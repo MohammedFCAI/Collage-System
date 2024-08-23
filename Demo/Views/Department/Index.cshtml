@@ -1,0 +1,25 @@
+﻿@model List<Department>    
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Departments</h1>
+
+<table class="table table-order table-hover">
+
+    <tr>
+        <td>Department Name</td>
+        <td>Manager Name</td>
+        <td>Details</td>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.ManagerName</td>
+            <td><a asp-action="Details" asp-controller="Department">Details</a></td>
+        </tr>
+        
+    }
+
+</table>

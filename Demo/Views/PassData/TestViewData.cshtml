@@ -1,0 +1,35 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "TestViewData";
+}
+
+<h1>TestViewData</h1>
+@Model.Name
+<h2 style="background-color:@ViewData["color"]">@Model.Name</h2>
+
+
+<!--ViewData-->
+
+<h3>Message: @ViewData["msg"]</h3>
+
+@* Select
+<select class="form-control">
+    @foreach(var item in (List<string>)ViewData["brch"])
+    {
+        <option>@item</option>
+    }
+</select> *@
+
+
+<select class="form-control">
+    @foreach(var item in ViewBag.brch)
+    {
+        <option>@item</option>
+    }
+</select>
+
+
+
+<h4>@((int)ViewData["temp"] + 10)</h4> || <h4>@((int)ViewBag.temp + 10)
+
+
